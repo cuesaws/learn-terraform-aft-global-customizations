@@ -7,7 +7,7 @@ resource "aws_security_group" "cues_sg" {
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_blocks = ["11.xx.xx.xx/32"] #replace it with your ip address
+    cidr_blocks = ["98.212.123.227/32"] #replace it with your ip address
   }
 
   #Outgoing traffic
@@ -20,5 +20,5 @@ resource "aws_security_group" "cues_sg" {
 }
 resource "aws_key_pair" "ec2-key-pair" {
   key_name = "ec2_key"
-  public_key = file("./ssh-keys/ec2-key-pair.pub")
+  public_key = file("./ec2_key_pair.pub")
 }
