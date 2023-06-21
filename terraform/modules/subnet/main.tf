@@ -11,7 +11,3 @@ resource "aws_subnet" "private_subnet_1" {
     Name = "PrivateSubnet1"
   }
 }
-output "subnet_id" {
-  description = "The ID of the subnet"
-  value       = aws_subnet.example.id
-}
