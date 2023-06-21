@@ -1,9 +1,16 @@
+# Used to grab subnet_id from subnet module
+variable "subnet_id" {
+  description = "The ID of the subnet where the instance will be created"
+  type        = string
+}
+
 resource "aws_instance" "cues-ec2" {
   # Update with your desired AMI ID
   ami = "ami-0b54418bdd76353ce" # Linux AMI ID
   instance_type = "t3.micro"
   key_name = aws_key_pair.ec2-key-pair.key_name
   security_groups = ["cues-ec2-sg-aft"]
+  subnet_id = var.subnet_id
 }
 
 
