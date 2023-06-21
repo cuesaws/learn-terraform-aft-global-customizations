@@ -5,3 +5,8 @@ resource "aws_instance" "cues-ec2" {
   key_name = var.key_name
   security_groups = ["cues-ec2-sg-aft"]
 }
+
+variable "key_name" {
+  description = "The key name to be used by the EC2 instance"
+  type        = string
+}
