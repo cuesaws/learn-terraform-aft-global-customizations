@@ -9,4 +9,5 @@ module "subnet" {
 module "ec2" {
   source = "./modules/ec2"
   subnet_id = module.subnet.subnet_id
+  vpc_id = module.vpc.vpc_id
 }

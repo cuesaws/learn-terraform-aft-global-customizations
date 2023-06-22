@@ -3,6 +3,10 @@ variable "subnet_id" {
   description = "The ID of the subnet where the instance will be created"
   type        = string
 }
+variable "vpc_id" {
+  description = "The ID of the VPC where the security group will be created"
+  type        = string
+}
 
 resource "aws_instance" "cues-ec2" {
   # Update with your desired AMI ID
@@ -16,7 +20,7 @@ resource "aws_instance" "cues-ec2" {
 
 resource "aws_security_group" "cues_sg" {
   name = "cues-sg-using-terraform"
-
+  vpc_id = var.vpc_id
   #Incoming traffic
   ingress {
     from_port = 22
