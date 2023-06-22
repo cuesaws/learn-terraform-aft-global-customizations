@@ -10,7 +10,7 @@ variable "vpc_id" {
 
 resource "aws_instance" "cues-ec2" {
   # Update with your desired AMI ID
-  ami = "ami-0b54418bdd76353ce" # Linux AMI ID
+  ami = "ami-022e1a32d3f742bd8" # Linux AMI ID
   instance_type = "t3.micro"
   key_name = aws_key_pair.ec2-key-pair.key_name
   vpc_security_group_ids = [aws_security_group.cues_sg.id]
