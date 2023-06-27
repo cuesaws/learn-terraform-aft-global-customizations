@@ -34,7 +34,7 @@ resource "aws_security_group" "cues_sg" {
     from_port = 0
     protocol = "-1"
     to_port = 0
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["98.212.123.227/32"] #replace it with your ip address
   }
 }
 resource "aws_key_pair" "ec2-key-pair" {
